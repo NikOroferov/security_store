@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 async function getBlogs() {
-	const response = await fetch('https://jsonplaceholder.typicode.coms/posts', {
+	const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
 		next: {
 			revalidate: 60
 		}
