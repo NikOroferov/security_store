@@ -76,6 +76,10 @@ ul {
 		font-weight: 500;
 		transition: color 0.3s ease;
 
+		&.active {
+			color: rgb(250, 172, 172);
+		}
+
 		&:hover {
 			color: #005bb5;
 		}
@@ -126,6 +130,7 @@ main {
 
 	min-height: calc(100dvh - 62px);
 	margin-top: 72px;
+	padding-top: 25px;
 }
 
 /* Container */

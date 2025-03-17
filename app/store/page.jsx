@@ -13,6 +13,16 @@ async function getBlogs() {
 	return response.json();
 }
 
+async function getBlogsBySearch(search) {
+	const response = await fetch(`https://jsonplaceholder.typicode.com/posts?q=${search}`, {
+		next: {
+			revalidate: 60
+		}
+	});
+
+	return response;
+}
+
 export const metadata = {
   title: "Store | Security store",
   description: "Магазин товарів безпеки. Сторінка продуктів",
@@ -24,6 +34,11 @@ async function Store() {
 	return ( 
 	<>
 		<h1>Store</h1> 
+
+		<form >
+			<input type="text" name="search" id="search" />
+			<button type="submit">Search</button>
+		</form>
 
 		<ul className="flex-column">
 			{posts.map(post => (
